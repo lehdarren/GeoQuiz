@@ -19,12 +19,12 @@ class MainActivity : AppCompatActivity() {
 
         trueButton.setOnClickListener {view: View ->
             //DO something in response to the click here
-            Toast.makeText(this, R.string.correct_toast, Toast.LENGTH_SHORT)
+            Toast.makeText(this, R.string.correct_toast, Toast.LENGTH_SHORT).show()
         }
 
         falseButton.setOnClickListener{view: View ->
             //Do something here to
-            Toast.makeText(this, R.string.incorrect_toast, Toast.LENGTH_SHORT)
+            Toast.makeText(this, R.string.incorrect_toast, Toast.LENGTH_SHORT).show()
         }
     }
 }
