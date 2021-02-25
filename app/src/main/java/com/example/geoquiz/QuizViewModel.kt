@@ -20,6 +20,7 @@ class QuizViewModel : ViewModel() {
     )
 
     var currentIndex = 0
+    var isCheater = false
 
     override fun onCleared() {
         super.onCleared()
