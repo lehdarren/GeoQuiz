@@ -10,13 +10,13 @@ class QuizViewModel : ViewModel() {
         Log.d(TAG, "ViewModel instance: created")
     }
 
-    private val questionBank = listOf(
-            Question(R.string.question_australia, true),
-            Question(R.string.question_oceans, true),
-            Question(R.string.question_mideast, false),
-            Question(R.string.question_africa, false),
-            Question(R.string.question_americas, true),
-            Question(R.string.question_asia, true)
+    private var questionBank = listOf(
+            Question(R.string.question_australia, true, false),
+            Question(R.string.question_oceans, true, false),
+            Question(R.string.question_mideast, false, false),
+            Question(R.string.question_africa, false, false),
+            Question(R.string.question_americas, true, false),
+            Question(R.string.question_asia, true, false)
     )
 
     var currentIndex = 0
@@ -33,6 +33,12 @@ class QuizViewModel : ViewModel() {
     val currentQuestionText: Int
         get() = questionBank[currentIndex].textResId
 
+    val currentQuestionCheated: Boolean
+        get() = questionBank[currentIndex].cheater
+
+    fun Cheater(cheater: Boolean) {
+        questionBank[currentIndex].cheater = cheater
+    }
     fun moveToNext() {
         currentIndex = (currentIndex + 1) % questionBank.size
     }
